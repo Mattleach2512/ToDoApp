@@ -8,5 +8,7 @@ namespace ToDoApp.Contracts
 {
     public interface IToDoRepository : IBaseRepository<ToDoItem>
     {
+
+        
     }
 }

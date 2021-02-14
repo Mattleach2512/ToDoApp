@@ -1,4 +1,8 @@
-﻿@model IEnumerable<ToDoApp.Models.ToDoItemVM>
+﻿
+
+
+
+@model IEnumerable<ToDoApp.Models.ToDoItemVM>
 
 @{
     ViewData["Title"] = "Index";
@@ -9,7 +13,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table id="tbldata" class="table">
     <thead>
         <tr>
             <th>
@@ -22,20 +26,30 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DueDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a asp-action="Details" class="btn btn-warning" asp-route-id="@item.Id"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                    <a asp-action="Delete" class="btn btn-warning" asp-route-id="@item.Id"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@section Scripts{
+<script>
+    $(document).ready(function () {
+        $('#tbldata').DataTable();
+    });
+</script>
+    
+}

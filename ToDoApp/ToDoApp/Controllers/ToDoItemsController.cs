@@ -6,6 +6,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ToDoApp.Contracts;
 using ToDoApp.Data;
 using ToDoApp.Models;
@@ -32,9 +33,11 @@ namespace ToDoApp.Controllers
         }
 
         // GET: ToDoItems/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int Id)
         {
-            return View();
+            var ToDoItem = _repo.FindById(Id);
+            var model = _mapper.Map<ToDoItemVM>(ToDoItem);
+            return View(model);
         }
 
         // GET: ToDoItems/Create
@@ -47,7 +50,7 @@ namespace ToDoApp.Controllers
         // POST: ToDoItems/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( ToDoItemVM model)
+        public ActionResult Create(ToDoItemVM model)
         {
             try
             {
@@ -67,38 +70,53 @@ namespace ToDoApp.Controllers
         }
 
         // GET: ToDoItems/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int Id)
         {
-            return View();
+            if (!_repo.isExists(Id))
+            {
+                return NotFound();
+            }
+            
+            var ToDoItem = _repo.FindById(Id);
+            var model = _mapper.Map<ToDoItemVM>(ToDoItem);
+            return View(model);
+
+            
         }
 
         // POST: ToDoItems/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(ToDoItemVM model)
         {
-            try
+            var ToDoItem = _mapper.Map<ToDoItem>(model);
+            var isSuccess = _repo.Update(ToDoItem);
+            if (!isSuccess)
             {
-                // TODO: Add update logic here
+                return View(model);
+            }
+            return RedirectToAction(nameof(Index));
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+
         }
 
         // GET: ToDoItems/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int Id, ToDoItemVM model)
         {
-            return View();
+            var ToDoItem = _repo.FindById(Id);
+            var isSuccess = _repo.Delete(ToDoItem);
+            if (!isSuccess)
+            {
+                return View(model);
+            }
+            return RedirectToAction(nameof(Index));
+
         }
 
         // POST: ToDoItems/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int Id, IFormCollection collection)
         {
             try
             {

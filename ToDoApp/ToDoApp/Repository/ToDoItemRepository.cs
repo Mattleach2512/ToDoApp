@@ -17,6 +17,8 @@ namespace ToDoApp.Repository
             _db = db;
         }
 
+        
+
         public bool Create(ToDoItem entity)
         {
             _db.ToDoItems.Add(entity);
@@ -39,6 +41,12 @@ namespace ToDoApp.Repository
         {
             return _db.ToDoItems.Find(Id);
 
+        }
+
+        public bool isExists(int Id)
+        {
+            var exists = _db.ToDoItems.Any(q => q.Id == Id);
+            return exists;
         }
 
         public bool Save()

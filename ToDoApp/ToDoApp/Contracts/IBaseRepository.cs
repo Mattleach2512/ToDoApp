@@ -19,5 +19,8 @@ namespace ToDoApp.Contracts
         bool Delete(T entity);
 
         bool Save();
+        bool isExists(int Id);
+
+
     }
 }
