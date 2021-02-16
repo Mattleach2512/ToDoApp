@@ -70,6 +70,8 @@ stages:
         tokenSuffix: '}#'
         useLegacyPattern: false
         enableTelemetry: true
+      
+
     - task: Kubernetes@1
       inputs:
         connectionType: 'Kubernetes Service Connection'
@@ -77,9 +79,9 @@ stages:
         namespace: 'default'
         command: 'apply'
         useConfigurationFile: true
-        configuration: '$(Build.SourcesDirectory)/ToDoApp/ToDoApp/$(deploymentFile)'
+        configuration: 'dsfsd'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
-        azureSubscriptionEndpointForSecrets: 'Visual Studio Enterprise – MPN (d01e22a2-bdb3-4c7a-92a2-613cc0dc1f30)'
+        azureSubscriptionEndpointForSecrets: 'Visual Studio Enterprise – MPN(d01e22a2-bdb3-4c7a-92a2-613cc0dc1f30)'
         azureContainerRegistry: 'demoacr666.azurecr.io'
           
