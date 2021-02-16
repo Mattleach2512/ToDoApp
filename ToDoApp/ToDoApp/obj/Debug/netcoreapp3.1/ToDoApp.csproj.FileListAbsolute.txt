@@ -154,10 +154,10 @@ C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\bin\Debug\netco
 C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDoItems\Index.cshtml.g.cs
 C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\obj\Debug\netcoreapp3.1\ToDoApp.csproj.CoreCompileInputs.cache
-C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\obj\Debug\netcoreapp3.1\ToDoApp.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\obj\Debug\netcoreapp3.1\ToDoApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDoItems\Create.cshtml.g.cs
 C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDoItems\Edit.cshtml.g.cs
 C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDoItems\Details.cshtml.g.cs
 C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDoItems\Delete.cshtml.g.cs
+C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\obj\Debug\netcoreapp3.1\ToDoApp.csproj.CoreCompileInputs.cache
+C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\obj\Debug\netcoreapp3.1\ToDoApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\mattl\OneDrive\Documents\GitHub\ToDoApp\ToDoApp\ToDoApp\obj\Debug\netcoreapp3.1\ToDoApp.MvcApplicationPartsAssemblyInfo.cache
