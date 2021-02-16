@@ -18,7 +18,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: ubuntu-1804
+      vmImage: 'ubuntu-1604'
     steps:
     - task: Docker@2
       displayName: Build an image
