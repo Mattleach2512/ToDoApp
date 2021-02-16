@@ -13,7 +13,7 @@ variables:
   dockerRegistryServiceConnection: '4fdf09df-2240-4806-8adf-1e0b5eadca45'
   imageRepository: 'ToDoApp'
   containerRegistry: 'demoacr666.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/ToDoApp/ToDoApp/Dockerfile'
+  dockerfilePath: 'https://github.com/Mattleach2512/ToDoApp/blob/main/ToDoApp/ToDoApp/Dockerfile'
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
