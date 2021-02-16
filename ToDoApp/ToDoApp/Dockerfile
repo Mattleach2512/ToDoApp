@@ -11,7 +11,7 @@ COPY ["ToDoApp.csproj", "ToDoApp/"]
 RUN dotnet restore "ToDoApp/ToDoApp.csproj"
 COPY . .
 WORKDIR "/src/ToDoApp"
-CMD ls
+RUN dir
 RUN dotnet build "ToDoApp.csproj" -c Release -o /app/build
 
 FROM build AS publish
