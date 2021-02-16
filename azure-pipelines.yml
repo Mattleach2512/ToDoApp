@@ -79,7 +79,7 @@ stages:
         namespace: 'default'
         command: 'apply'
         useConfigurationFile: true
-        configuration: 'dsfsd'
+        configuration: '$(Build.SourcesDirectory)/ToDoApp/ToDoApp/$(deploymentFile)'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
         azureSubscriptionEndpointForSecrets: 'Visual Studio Enterprise – MPN(d01e22a2-bdb3-4c7a-92a2-613cc0dc1f30)'
