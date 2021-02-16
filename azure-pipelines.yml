@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '4fdf09df-2240-4806-8adf-1e0b5eadca45'
-  imageRepository: 'mattleachtodoapp'
+  imageRepository: 'ToDoApp'
   containerRegistry: 'demoacr666.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/ToDoApp/ToDoApp/Dockerfile'
   tag: '$(Build.BuildId)'
