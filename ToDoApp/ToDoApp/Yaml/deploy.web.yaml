@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ToDoApp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ToDoApp
+  template:
+    metadata:
+      labels:
+        app: ToDoApp
+    spec:
+      containers:
+      - name: ToDoApp
+        image: demoacr666.azurecr.io:63
+        ports:
+        - containerPort: 1234
+        resources:
+          requests:
+            cpu: 1
+            memory: 1Gi
+          limits:
+            cpu: 2
+            memory: 2Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ToDoApp
+spec:
+  selector:
+    app: ToDoApp
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8000
+      targetPort: 8000
