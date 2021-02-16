@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ToDoApp
+  name: todoapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ToDoApp
+      app: todoapp
   template:
     metadata:
       labels:
-        app: ToDoApp
+        app: todoapp
     spec:
       containers:
-      - name: ToDoApp
-        image: demoacr666.azurecr.io:63
+      - name: todoapp
+        image: demoacr666.azurecr.io/mattleachtodoapp:#{Build.BuildId}#
         ports:
         - containerPort: 1234
         resources:
@@ -28,10 +28,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ToDoApp
+  name: todoapp
 spec:
   selector:
-    app: ToDoApp
+    app: todoapp
   ports:
     - name: http
       protocol: TCP
