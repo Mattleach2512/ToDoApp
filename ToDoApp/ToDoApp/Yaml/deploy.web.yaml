@@ -30,10 +30,8 @@ kind: Service
 metadata:
   name: todoapp
 spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
   selector:
     app: todoapp
-  ports:
-    - name: http
-      protocol: TCP
-      port: 8000
-      targetPort: 8000
